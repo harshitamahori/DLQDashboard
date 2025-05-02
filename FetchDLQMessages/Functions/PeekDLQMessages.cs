@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
@@ -10,10 +11,12 @@ namespace FetchDLQMessages.Functions
     public class PeekLockDLQ
     {
         private readonly ILogger<PeekLockDLQ> _logger;
+        private readonly IConfiguration _configuration;
 
-        public PeekLockDLQ(ILogger<PeekLockDLQ> logger)
+        public PeekLockDLQ(ILogger<PeekLockDLQ> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         [Function("PeekDLQMessages")]
@@ -23,8 +26,9 @@ namespace FetchDLQMessages.Functions
         {
             _logger.LogInformation("PeekLockDLQ function triggered.");
 
-            var connectionString = Environment.GetEnvironmentVariable("ServiceBusConnection");
-            var queueName = Environment.GetEnvironmentVariable("queueName");
+            var connectionString = _configuration.GetConnectionString("ServiceBusConnection");
+            var queueName = _configuration.GetValue<string>("AppSettings:QueueName");
+
 
             await using var client = new ServiceBusClient(connectionString);
             var receiver = client.CreateReceiver(queueName, new ServiceBusReceiverOptions

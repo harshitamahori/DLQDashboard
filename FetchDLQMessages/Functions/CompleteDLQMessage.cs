@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using Microsoft.Extensions.Configuration;
 using System.Text.Json;
 using Azure.Messaging.ServiceBus;
 using Microsoft.Azure.Functions.Worker;
@@ -10,10 +11,12 @@ namespace FetchDLQMessages.Functions
     public class CompleteDLQMessage
     {
         private readonly ILogger<CompleteDLQMessage> _logger;
+        private readonly IConfiguration _configuration;
 
-        public CompleteDLQMessage(ILogger<CompleteDLQMessage> logger)
+        public CompleteDLQMessage(ILogger<CompleteDLQMessage> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         [Function("CompleteDLQMessage")]
@@ -32,8 +35,8 @@ namespace FetchDLQMessages.Functions
                 return badResponse;
             }
 
-            var connectionString = Environment.GetEnvironmentVariable("ServiceBusConnection");
-            var queueName = Environment.GetEnvironmentVariable("queueName");
+            var connectionString = _configuration.GetConnectionString("ServiceBusConnection");
+            var queueName = _configuration.GetValue<string>("AppSettings:QueueName");
 
             await using var client = new ServiceBusClient(connectionString);
             var receiver = client.CreateReceiver(queueName, new ServiceBusReceiverOptions

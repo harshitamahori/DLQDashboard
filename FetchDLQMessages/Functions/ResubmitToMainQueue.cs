@@ -4,16 +4,19 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 using FetchDLQMessages.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace FetchDLQMessages.Functions
 {
     public class ResubmitToMainQueue
     {
         private readonly ILogger<ResubmitToMainQueue> _logger;
+        private readonly IConfiguration _configuration;
 
-        public ResubmitToMainQueue(ILogger<ResubmitToMainQueue> logger)
+        public ResubmitToMainQueue(ILogger<ResubmitToMainQueue> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         [Function("ResubmitToMainQueue")]
@@ -34,8 +37,8 @@ namespace FetchDLQMessages.Functions
                 return badResponse;
             }
 
-            var connectionString = Environment.GetEnvironmentVariable("ServiceBusConnection");
-            var queueName = Environment.GetEnvironmentVariable("queueName");
+            var connectionString = _configuration.GetConnectionString("ServiceBusConnection");
+            var queueName = _configuration.GetValue<string>("AppSettings:QueueName");
 
             await using var client = new ServiceBusClient(connectionString);
 
