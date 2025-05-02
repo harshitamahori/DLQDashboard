@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ServiceBusDemo\\FetchDLQMessages\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|d:\\servicebusdemo\\fetchdlqmessages\\fetchdlqmessages\\functions\\peekdlqmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|solutionrelative:fetchdlqmessages\\functions\\peekdlqmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|d:\\servicebusdemo\\fetchdlqmessages\\fetchdlqmessages\\functions\\resubmittomainqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|solutionrelative:fetchdlqmessages\\functions\\resubmittomainqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|d:\\servicebusdemo\\fetchdlqmessages\\fetchdlqmessages\\models\\resubmitrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|solutionrelative:fetchdlqmessages\\models\\resubmitrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|d:\\servicebusdemo\\fetchdlqmessages\\fetchdlqmessages\\functions\\completedlqmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|solutionrelative:fetchdlqmessages\\functions\\completedlqmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|d:\\servicebusdemo\\fetchdlqmessages\\fetchdlqmessages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|solutionrelative:fetchdlqmessages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|d:\\servicebusdemo\\fetchdlqmessages\\fetchdlqmessages\\functions\\receiveanddeletedlq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5D0D517-2AF0-4B65-879A-5CCA6F1D1F7C}|FetchDLQMessages\\FetchDLQMessages.csproj|solutionrelative:fetchdlqmessages\\functions\\receiveanddeletedlq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompleteDLQMessage.cs",
+              "DocumentMoniker": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Functions\\CompleteDLQMessage.cs",
+              "RelativeDocumentMoniker": "FetchDLQMessages\\Functions\\CompleteDLQMessage.cs",
+              "ToolTip": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Functions\\CompleteDLQMessage.cs",
+              "RelativeToolTip": "FetchDLQMessages\\Functions\\CompleteDLQMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T10:40:21.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Program.cs",
+              "RelativeDocumentMoniker": "FetchDLQMessages\\Program.cs",
+              "ToolTip": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Program.cs",
+              "RelativeToolTip": "FetchDLQMessages\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:29:31.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ResubmitRequest.cs",
+              "DocumentMoniker": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Models\\ResubmitRequest.cs",
+              "RelativeDocumentMoniker": "FetchDLQMessages\\Models\\ResubmitRequest.cs",
+              "ToolTip": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Models\\ResubmitRequest.cs",
+              "RelativeToolTip": "FetchDLQMessages\\Models\\ResubmitRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:29:26.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ResubmitToMainQueue.cs",
+              "DocumentMoniker": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Functions\\ResubmitToMainQueue.cs",
+              "RelativeDocumentMoniker": "FetchDLQMessages\\Functions\\ResubmitToMainQueue.cs",
+              "ToolTip": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Functions\\ResubmitToMainQueue.cs",
+              "RelativeToolTip": "FetchDLQMessages\\Functions\\ResubmitToMainQueue.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:07:12.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PeekDLQMessages.cs",
+              "DocumentMoniker": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Functions\\PeekDLQMessages.cs",
+              "RelativeDocumentMoniker": "FetchDLQMessages\\Functions\\PeekDLQMessages.cs",
+              "ToolTip": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Functions\\PeekDLQMessages.cs",
+              "RelativeToolTip": "FetchDLQMessages\\Functions\\PeekDLQMessages.cs",
+              "ViewState": "AgIAABUAAABAzMzMzMwiwCEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T17:10:01.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ReceiveAndDeleteDLQ.cs",
+              "DocumentMoniker": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Functions\\ReceiveAndDeleteDLQ.cs",
+              "RelativeDocumentMoniker": "FetchDLQMessages\\Functions\\ReceiveAndDeleteDLQ.cs",
+              "ToolTip": "D:\\ServiceBusDemo\\FetchDLQMessages\\FetchDLQMessages\\Functions\\ReceiveAndDeleteDLQ.cs",
+              "RelativeToolTip": "FetchDLQMessages\\Functions\\ReceiveAndDeleteDLQ.cs",
+              "ViewState": "AgIAAC8AAADQMDMzMzMwwA4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T17:36:38.802Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
