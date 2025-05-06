@@ -6,38 +6,37 @@ using Azure.Messaging.ServiceBus;
 using System.Text.Json;
 using System.Linq;
 
+
 namespace FetchDLQMessages.Functions
 {
-    public class PeekLockDLQ
+    public class PeekDLQMessage
     {
-        private readonly ILogger<PeekLockDLQ> _logger;
+        private readonly ILogger<PeekDLQMessage> _logger;
         private readonly IConfiguration _configuration;
 
-        public PeekLockDLQ(ILogger<PeekLockDLQ> logger, IConfiguration configuration)
+        public PeekDLQMessage(ILogger<PeekDLQMessage> logger, IConfiguration configuration)
         {
             _logger = logger;
             _configuration = configuration;
         }
 
-        [Function("PeekDLQMessages")]
+        [Function("PeekDLQMessage")]
         public async Task<HttpResponseData> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req,
-            FunctionContext executionContext)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req)
         {
-            _logger.LogInformation("PeekLockDLQ function triggered.");
+            _logger.LogInformation("PeekDLQMessage is triggered");
 
             var connectionString = _configuration.GetConnectionString("ServiceBusConnection");
             var queueName = _configuration.GetValue<string>("AppSettings:QueueName");
 
-
             await using var client = new ServiceBusClient(connectionString);
             var receiver = client.CreateReceiver(queueName, new ServiceBusReceiverOptions
             {
-                SubQueue = SubQueue.DeadLetter,
-                ReceiveMode = ServiceBusReceiveMode.PeekLock
+                SubQueue = SubQueue.DeadLetter 
             });
 
-            var messages = await receiver.ReceiveMessagesAsync(maxMessages: 50, maxWaitTime: TimeSpan.FromSeconds(5));
+            
+            var messages = await receiver.PeekMessagesAsync(maxMessages: 50, fromSequenceNumber:0);
 
             if (messages == null || !messages.Any())
             {
@@ -53,13 +52,13 @@ namespace FetchDLQMessages.Functions
                 m.EnqueuedTime,
                 m.SequenceNumber,
                 m.DeadLetterReason,
-                Mode = "PeekLock",
-                status="Pending"
             }).ToList();
 
             var response = req.CreateResponse(System.Net.HttpStatusCode.OK);
             await response.WriteStringAsync(JsonSerializer.Serialize(result));
             return response;
+
+
         }
     }
 }

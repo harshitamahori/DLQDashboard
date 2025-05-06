@@ -40,6 +40,8 @@ namespace FetchDLQMessages.Functions
             var connectionString = _configuration.GetConnectionString("ServiceBusConnection");
             var queueName = _configuration.GetValue<string>("AppSettings:QueueName");
 
+
+
             await using var client = new ServiceBusClient(connectionString);
 
             var sender = client.CreateSender(queueName);
