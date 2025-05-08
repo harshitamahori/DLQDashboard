@@ -22,7 +22,7 @@ namespace FetchDLQMessages.Functions
 
         [Function("PeekDLQMessage")]
         public async Task<HttpResponseData> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req)
+            [HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req)
         {
             _logger.LogInformation("PeekDLQMessage is triggered");
 

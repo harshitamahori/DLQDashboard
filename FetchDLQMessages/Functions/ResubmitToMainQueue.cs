@@ -21,7 +21,7 @@ namespace FetchDLQMessages.Functions
 
         [Function("ResubmitToMainQueue")]
         public async Task<HttpResponseData> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req,
+            [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req,
             FunctionContext executionContext)
         {
             _logger.LogInformation("ResubmitToMainQueue function triggered.");
