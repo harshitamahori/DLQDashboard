@@ -35,7 +35,7 @@ namespace FetchDLQMessages.Functions
                 SubQueue = SubQueue.DeadLetter 
             });
 
-            
+            //non destructive fetch-Peek
             var messages = await receiver.PeekMessagesAsync(maxMessages: 50, fromSequenceNumber:0);
 
             if (messages == null || !messages.Any())
