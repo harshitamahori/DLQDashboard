@@ -42,6 +42,7 @@ namespace FetchDLQMessages.Functions
 
             while (true)
             {
+                //fetch multiple messages
                 var message = await receiver.PeekMessagesAsync(
                     maxMessages: batchSize,
                     fromSequenceNumber: lastSequenceNumber.HasValue ? lastSequenceNumber.Value + 1 : 1
