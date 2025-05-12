@@ -36,22 +36,39 @@ namespace FetchDLQMessages.Functions
             });
 
             //non destructive fetch-Peek
-            var messages = await receiver.PeekMessagesAsync(maxMessages: 50, fromSequenceNumber:0);
+            var allMessages = new List<ServiceBusReceivedMessage>();
+            long? lastSequenceNumber = null;
+            int batchSize = 10;
 
-            if (messages == null || !messages.Any())
+            while (true)
+            {
+                var message = await receiver.PeekMessagesAsync(
+                    maxMessages: batchSize,
+                    fromSequenceNumber: lastSequenceNumber.HasValue ? lastSequenceNumber.Value + 1 : 1
+                );
+
+                if (message == null || !message.Any())
+                    break;
+
+                allMessages.AddRange(message);
+                lastSequenceNumber = message.Last().SequenceNumber;
+            }
+
+            if (!allMessages.Any())
             {
                 var notFoundResponse = req.CreateResponse(System.Net.HttpStatusCode.NotFound);
                 await notFoundResponse.WriteStringAsync("No messages found in DLQ.");
                 return notFoundResponse;
             }
 
-            var result = messages.Select(m => new
+            var result = allMessages.Select(m => new
             {
                 m.MessageId,
                 Body = m.Body.ToString(),
                 m.EnqueuedTime,
                 m.SequenceNumber,
                 m.DeadLetterReason,
+                m.DeadLetterErrorDescription
             }).ToList();
 
             var response = req.CreateResponse(System.Net.HttpStatusCode.OK);
